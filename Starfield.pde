@@ -23,4 +23,3 @@ class JumboParticle //uses inheritance
 {
 	//your code here
 }
-
