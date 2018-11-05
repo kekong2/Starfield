@@ -45,11 +45,15 @@ interface Particle
 class OddballParticle //uses an interface
 {
   //your code here
-  double x, y;
-  int theColor;
+  int x, y, theColor;
   OddballParticle(){
     x = y = 250;
+    theColor = color((int)(Math.random()*256), (int)(Math.random()*256), (int)(Math.random()*256));
   }
+  void move (){
+    x = x + (Math.random()*)
+  }
+  void show (){}
 
 }
 class JumboParticle extends NormalParticle//uses inheritance
