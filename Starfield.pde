@@ -1,5 +1,5 @@
 //your c//your code here
-NormalParticle[] bob = new NormalParticle[200];
+Particle[] bob = new Particle[200];
 void setup()
 {
   //your code here
@@ -8,6 +8,7 @@ void setup()
     bob[i] = new NormalParticle();
   }
   bob[5] = new JumboParticle();
+  bob[123] = new OddballParticle();
 }
 void draw()
 {
@@ -18,7 +19,7 @@ void draw()
     bob[i].move();
   }
 }
-class NormalParticle
+class NormalParticle implements Particle
 {
   double myX, myY, mySpeed, myAngle;
   int myColor; 
@@ -41,8 +42,11 @@ class NormalParticle
 interface Particle
 {
   //your code here
+  public void show();
+  public void move();
+
 }
-class OddballParticle //uses an interface
+class OddballParticle implements Particle//uses an interface
 {
   //your code here
   int x, y, theColor;
@@ -50,10 +54,15 @@ class OddballParticle //uses an interface
     x = y = 250;
     theColor = color((int)(Math.random()*256), (int)(Math.random()*256), (int)(Math.random()*256));
   }
-  void move (){
-    x = x + (Math.random()*)
+  public void move (){
+    x = x + ((int)(Math.random()*5)-2);
+    y = y + ((int)(Math.random()*5)-2);
   }
-  void show (){}
+  public void show (){
+    fill(theColor);
+    stroke(theColor);
+    ellipse(x, y, 5, 5);
+  }
 
 }
 class JumboParticle extends NormalParticle//uses inheritance
